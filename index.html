@@ -1,0 +1,190 @@
+ <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahi Pakwan - Online Mithai Shop</title>
+    <!-- Fonts aur Icons -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-circle">🌟</div>
+            <h1>Shahi Pakwan</h1>
+        </div>
+        <p class="tagline">Sudh Desi Ghee Se Nirmit Swadist Mithaiyan</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Shop Details Section -->
+        <section class="shop-details-card">
+            <h2>🏪 Dukaan Ki Poori Jankari (Shop Details)</h2>
+            <div class="details-grid">
+                <div class="detail-item"><strong>Owner Name:</strong> Rajesh Kumar Sharma</div>
+                <div class="detail-item"><strong>Shop Name:</strong> Shahi Pakwan Sweets & Bakers</div>
+                <div class="detail-item"><strong>Mobile No:</strong> +91 98765 43210</div>
+                <div class="detail-item"><strong>Email:</strong> info@shahipakwan.com</div>
+                <div class="detail-item">
+                    <strong>Full Address:</strong> Shop No. 12, Halwai Gali, Chandni Chowk, Near Krishna Mandir, New Delhi - 110006
+                </div>
+            </div>
+        </section>
+
+        <!-- Mithai Category Section (All 6 Items) -->
+        <section class="sweets-section">
+            <h2>🍬 Hamari Khas Mithaiyan (Rate Per KG)</h2>
+            <div class="sweets-grid">
+                
+                <!-- Mithai 1 -->
+                <div class="sweet-card">
+                    <span class="badge best-seller">Best Seller 🔥</span>
+                    <div class="sweet-image-container">
+                        <img src="balushahi.jpg" alt="Balushahi" class="sweet-img">
+                    </div>
+                    <h3>Shahi Balushahi</h3>
+                    <div class="price-tag">Price: <span class="rate">₹380</span> / kg</div>
+                    <button class="order-btn" onclick="openOrderModal('Shahi Balushahi', 380)">Order Now</button>
+                </div>
+
+                <!-- Mithai 2 -->
+                <div class="sweet-card">
+                    <span class="badge premium">Premium ✨</span>
+                    <div class="sweet-image-container">
+                        <img src="kajukatli.jpg" alt="Kaju Katli" class="sweet-img">
+                    </div>
+                    <h3>Premium Kaju Katli</h3>
+                    <div class="price-tag">Price: <span class="rate">₹800</span> / kg</div>
+                    <button class="order-btn" onclick="openOrderModal('Premium Kaju Katli', 800)">Order Now</button>
+                </div>
+
+                <!-- Mithai 3 -->
+                <div class="sweet-card">
+                    <span class="badge ghee">Desi Ghee 🍯</span>
+                    <div class="sweet-image-container">
+                        <img src="gulabjamun.jpg" alt="Gulab Jamun" class="sweet-img">
+                    </div>
+                    <h3>Gulab Jamun (Desi Ghee)</h3>
+                    <div class="price-tag">Price: <span class="rate">₹400</span> / kg</div>
+                    <button class="order-btn" onclick="openOrderModal('Gulab Jamun (Desi Ghee)', 400)">Order Now</button>
+                </div>
+
+                <!-- Mithai 4 -->
+                <div class="sweet-card">
+                    <span class="badge trending">Trending 📈</span>
+                    <div class="sweet-image-container">
+                        <img src="laddu.jpg" alt="Motichoor Laddu" class="sweet-img">
+                    </div>
+                    <h3>Special Motichoor Laddu</h3>
+                    <div class="price-tag">Price: <span class="rate">₹350</span> / kg</div>
+                    <button class="order-btn" onclick="openOrderModal('Special Motichoor Laddu', 350)">Order Now</button>
+                </div>
+
+                <!-- Mithai 5 -->
+                <div class="sweet-card">
+                    <span class="badge fresh">Fresh Today 🥛</span>
+                    <div class="sweet-image-container">
+                        <img src="rasmalai.jpg" alt="Rasmalai" class="sweet-img">
+                    </div>
+                    <h3>Kesar Rasmalai</h3>
+                    <div class="price-tag">Price: <span class="rate">₹500</span> / kg</div>
+                    <button class="order-btn" onclick="openOrderModal('Kesar Rasmalai', 500)">Order Now</button>
+                </div>
+
+                <!-- Mithai 6 -->
+                <div class="sweet-card">
+                    <span class="badge low-fat">Sponge ☁️</span>
+                    <div class="sweet-image-container">
+                        <img src="rasgulla.jpg" alt="Rasgulla" class="sweet-img">
+                    </div>
+                    <h3>Bengali Sponge Rasgulla</h3>
+                    <div class="price-tag">Price: <span class="rate">₹300</span> / kg</div>
+                    <button class="order-btn" onclick="openOrderModal('Bengali Sponge Rasgulla', 300)">Order Now</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CENTER ADVERTISEMENT & REVIEW VIDEO SECTION -->
+        <section class="ad-video-section">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <h2>Humare Grahako Ka Bharosa (Customer Reviews)</h2>
+            <p class="ad-subtext">Ek baar swad chakhenge, toh baar-baar Shahi Pakwan hi mangwayenge!</p>
+            
+            <div class="ad-video-wrapper">
+                <video autoplay muted loop playsinline controls class="ad-video-player">
+                    <source src="shop-advertisement.mp4" type="video/mp4">
+                    Aapka browser video support nahi karta hai.
+                </video>
+            </div>
+            
+            <p class="video-footer-text">✨ Hamari shudh aur swadist mithaiyon ki ek choti si jhalak</p>
+        </section>
+
+    </main>
+
+    <!-- Order Pop-up Form Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeOrderModal()">&times;</span>
+            <h2>🛒 Place Your Order</h2>
+            <p id="selectedSweetText">Aapne select kiya hai: <strong><span id="sweetName"></span></strong></p>
+            
+            <form id="orderForm" onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label for="quantity">Kitna KG Chahiye? (Quantity in KG):</label>
+                    <input type="number" id="quantity" min="0.5" step="0.5" placeholder="e.g. 1, 1.5, 2" oninput="calculateTotal()" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerName">Aapka Naam (Your Name):</label>
+                    <input type="text" id="customerName" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerPhone">Aapka Mobile Number (Contact No):</label>
+                    <input type="tel" id="customerPhone" pattern="[0-9]{10}" placeholder="10 Digits Mobile Number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerAddress">Poora Pata (Full Delivery Address):</label>
+                    <input type="text" id="customerAddress" placeholder="Ghar ka pata, Landmark, City aur Pincode" required>
+                </div>
+
+                <div class="total-price-box">
+                    Total Estimated Price: <span id="totalPriceDisplay">₹0</span>
+                </div>
+
+                <button type="submit" class="submit-btn"><i class="fa-solid fa-check-double"></i> Confirm Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Smart Success Modal Card -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success-card-content">
+            <div class="success-icon">🎉</div>
+            <h2>Order Details Saved!</h2>
+            <p class="redirect-notice">WhatsApp par chat open karne ke liye neeche diye gaye button par click karein.</p>
+            
+            <a href="#" id="whatsappLinkBtn" class="whatsapp-go-btn" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 Shahi Pakwan - All Rights Reserved</p>
+    </footer>
+
+    <!-- JS File Link -->
+    <script src="script.js"></script>
+</body>
+</html>

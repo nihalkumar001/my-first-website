@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fdf8f2;
+    color: #333;
+}
+
+/* Header Style */
+.header {
+    background: linear-gradient(135deg, #800020, #a30000);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.logo-circle {
+    font-size: 2.5rem;
+    background: #ffdf00;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #ffdf00;
+    font-style: italic;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Shop Details Card */
+.shop-details-card {
+    background: #fff;
+    border-left: 8px solid #ffdf00;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    margin-bottom: 50px;
+}
+
+.shop-details-card h2 {
+    color: #800020;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.detail-item {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Sweets Grid & Cards */
+.sweets-section h2 {
+    color: #800020;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sweets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.sweet-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0e0d0;
+    position: relative;
+    overflow: hidden;
+}
+
+.sweet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(128,0,32,0.14);
+}
+
+/* Badges */
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    z-index: 10;
+}
+.best-seller { background-color: #ff4757; }
+.premium { background-color: #ffa502; }
+.ghee { background-color: #2ed573; }
+.trending { background-color: #1e90ff; }
+.fresh { background-color: #9b59b6; }
+.low-fat { background-color: #2ecc71; }
+
+.sweet-image-container {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #f5f5f5;
+}
+
+.sweet-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.sweet-card:hover .sweet-img {
+    transform: scale(1.05);
+}
+
+.sweet-card h3 {
+    font-size: 1.3rem;
+    color: #444;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.price-tag {
+    font-size: 1.05rem;
+    color: #666;
+    margin-bottom: 20px;
+    background: #fff8f0;
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px dashed #ffdf00;
+}
+
+.price-tag .rate {
+    font-weight: 700;
+    color: #b32424;
+    font-size: 1.25rem;
+}
+
+.order-btn {
+    background-color: #800020;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.order-btn:hover {
+    background-color: #b32424;
+}
+
+/* Advertisement & Review Video Styling */
+.ad-video-section {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    text-align: center;
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(128, 0, 32, 0.05);
+    border: 1px solid #f0e0d0;
+}
+
+.review-stars {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.ad-video-section h2 {
+    color: #800020;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.ad-subtext {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.ad-video-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 3px solid #ffdf00;
+    background-color: #000;
+}
+
+.ad-video-player {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.video-footer-text {
+    font-size: 1.05rem;
+    color: #800020;
+    font-weight: 600;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Modals Pop-up Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    position: relative;
+    animation: slideDown 0.3s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.modal h2 {
+    color: #800020;
+    margin-bottom: 15px;
+}
+
+#selectedSweetText {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    background: #fdf2f2;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 4px solid #b32424;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    border-color: #800020;
+    outline: none;
+}
+
+.total-price-box {
+    background: #e6f4ea;
+    color: #137333;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    border: 1px solid #c2e7cd;
+}
+
+.submit-btn {
+    background-color: #800020;
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.submit-btn:hover {
+    background-color: #b32424;
+}
+
+/* Success Card Styling */
+.success-card-content {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 8px solid #28a745;
+}
+
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    animation: pop 0.4s ease-in-out;
+}
+
+@keyframes pop {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.redirect-notice {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.whatsapp-go-btn {
+    text-decoration: none;
+    background-color: #25D366;
+    color: white;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.whatsapp-go-btn:hover {
+    background-color: #128C7E;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: #aaa;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
