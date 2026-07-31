@@ -1,190 +1,499 @@
- <!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shahi Pakwan - Online Mithai Shop</title>
-    <!-- Fonts aur Icons -->
-    <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <!-- CSS File Link -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-    <!-- Header Section -->
-    <header class="header">
-        <div class="logo-container">
-            <div class="logo-circle">🌟</div>
-            <h1>Shahi Pakwan</h1>
-        </div>
-        <p class="tagline">Sudh Desi Ghee Se Nirmit Swadist Mithaiyan</p>
-    </header>
+body {
+    background-color: #fdf8f2;
+    color: #333;
+}
 
-    <!-- Main Content -->
-    <main class="container">
-        
-        <!-- Shop Details Section -->
-        <section class="shop-details-card">
-            <h2>🏪 Dukaan Ki Poori Jankari (Shop Details)</h2>
-            <div class="details-grid">
-                <div class="detail-item"><strong>Owner Name:</strong> Rajesh Kumar Sharma</div>
-                <div class="detail-item"><strong>Shop Name:</strong> Shahi Pakwan Sweets & Bakers</div>
-                <div class="detail-item"><strong>Mobile No:</strong> +91 98765 43210</div>
-                <div class="detail-item"><strong>Email:</strong> info@shahipakwan.com</div>
-                <div class="detail-item">
-                    <strong>Full Address:</strong> Shop No. 12, Halwai Gali, Chandni Chowk, Near Krishna Mandir, New Delhi - 110006
-                </div>
-            </div>
-        </section>
+/* Header Style */
+.header {
+    background: linear-gradient(135deg, #800020, #a30000);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
 
-        <!-- Mithai Category Section (All 6 Items) -->
-        <section class="sweets-section">
-            <h2>🍬 Hamari Khas Mithaiyan (Rate Per KG)</h2>
-            <div class="sweets-grid">
-                
-                <!-- Mithai 1 -->
-                <div class="sweet-card">
-                    <span class="badge best-seller">Best Seller 🔥</span>
-                    <div class="sweet-image-container">
-                        <img src="balushahi.jpg" alt="Balushahi" class="sweet-img">
-                    </div>
-                    <h3>Shahi Balushahi</h3>
-                    <div class="price-tag">Price: <span class="rate">₹380</span> / kg</div>
-                    <button class="order-btn" onclick="openOrderModal('Shahi Balushahi', 380)">Order Now</button>
-                </div>
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
 
-                <!-- Mithai 2 -->
-                <div class="sweet-card">
-                    <span class="badge premium">Premium ✨</span>
-                    <div class="sweet-image-container">
-                        <img src="kajukatli.jpg" alt="Kaju Katli" class="sweet-img">
-                    </div>
-                    <h3>Premium Kaju Katli</h3>
-                    <div class="price-tag">Price: <span class="rate">₹800</span> / kg</div>
-                    <button class="order-btn" onclick="openOrderModal('Premium Kaju Katli', 800)">Order Now</button>
-                </div>
+.logo-circle {
+    font-size: 2.5rem;
+    background: #ffdf00;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
 
-                <!-- Mithai 3 -->
-                <div class="sweet-card">
-                    <span class="badge ghee">Desi Ghee 🍯</span>
-                    <div class="sweet-image-container">
-                        <img src="gulabjamun.jpg" alt="Gulab Jamun" class="sweet-img">
-                    </div>
-                    <h3>Gulab Jamun (Desi Ghee)</h3>
-                    <div class="price-tag">Price: <span class="rate">₹400</span> / kg</div>
-                    <button class="order-btn" onclick="openOrderModal('Gulab Jamun (Desi Ghee)', 400)">Order Now</button>
-                </div>
+.header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
 
-                <!-- Mithai 4 -->
-                <div class="sweet-card">
-                    <span class="badge trending">Trending 📈</span>
-                    <div class="sweet-image-container">
-                        <img src="laddu.jpg" alt="Motichoor Laddu" class="sweet-img">
-                    </div>
-                    <h3>Special Motichoor Laddu</h3>
-                    <div class="price-tag">Price: <span class="rate">₹350</span> / kg</div>
-                    <button class="order-btn" onclick="openOrderModal('Special Motichoor Laddu', 350)">Order Now</button>
-                </div>
+.tagline {
+    font-size: 1.1rem;
+    color: #ffdf00;
+    font-style: italic;
+}
 
-                <!-- Mithai 5 -->
-                <div class="sweet-card">
-                    <span class="badge fresh">Fresh Today 🥛</span>
-                    <div class="sweet-image-container">
-                        <img src="rasmalai.jpg" alt="Rasmalai" class="sweet-img">
-                    </div>
-                    <h3>Kesar Rasmalai</h3>
-                    <div class="price-tag">Price: <span class="rate">₹500</span> / kg</div>
-                    <button class="order-btn" onclick="openOrderModal('Kesar Rasmalai', 500)">Order Now</button>
-                </div>
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
-                <!-- Mithai 6 -->
-                <div class="sweet-card">
-                    <span class="badge low-fat">Sponge ☁️</span>
-                    <div class="sweet-image-container">
-                        <img src="rasgulla.jpg" alt="Rasgulla" class="sweet-img">
-                    </div>
-                    <h3>Bengali Sponge Rasgulla</h3>
-                    <div class="price-tag">Price: <span class="rate">₹300</span> / kg</div>
-                    <button class="order-btn" onclick="openOrderModal('Bengali Sponge Rasgulla', 300)">Order Now</button>
-                </div>
+/* Shop Details Card */
+.shop-details-card {
+    background: #fff;
+    border-left: 8px solid #ffdf00;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    margin-bottom: 50px;
+}
 
-            </div>
-        </section>
+.shop-details-card h2 {
+    color: #800020;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
 
-        <!-- CENTER ADVERTISEMENT & REVIEW VIDEO SECTION -->
-        <section class="ad-video-section">
-            <div class="review-stars">⭐⭐⭐⭐⭐</div>
-            <h2>Humare Grahako Ka Bharosa (Customer Reviews)</h2>
-            <p class="ad-subtext">Ek baar swad chakhenge, toh baar-baar Shahi Pakwan hi mangwayenge!</p>
-            
-            <div class="ad-video-wrapper">
-                <video autoplay muted loop playsinline controls class="ad-video-player">
-                    <source src="shop-advertisement.mp4" type="video/mp4">
-                    Aapka browser video support nahi karta hai.
-                </video>
-            </div>
-            
-            <p class="video-footer-text">✨ Hamari shudh aur swadist mithaiyon ki ek choti si jhalak</p>
-        </section>
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
 
-    </main>
+.detail-item {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
 
-    <!-- Order Pop-up Form Modal -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeOrderModal()">&times;</span>
-            <h2>🛒 Place Your Order</h2>
-            <p id="selectedSweetText">Aapne select kiya hai: <strong><span id="sweetName"></span></strong></p>
-            
-            <form id="orderForm" onsubmit="submitOrder(event)">
-                <div class="form-group">
-                    <label for="quantity">Kitna KG Chahiye? (Quantity in KG):</label>
-                    <input type="number" id="quantity" min="0.5" step="0.5" placeholder="e.g. 1, 1.5, 2" oninput="calculateTotal()" required>
-                </div>
+/* Sweets Grid & Cards */
+.sweets-section h2 {
+    color: #800020;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
 
-                <div class="form-group">
-                    <label for="customerName">Aapka Naam (Your Name):</label>
-                    <input type="text" id="customerName" placeholder="Enter your name" required>
-                </div>
+.sweets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
 
-                <div class="form-group">
-                    <label for="customerPhone">Aapka Mobile Number (Contact No):</label>
-                    <input type="tel" id="customerPhone" pattern="[0-9]{10}" placeholder="10 Digits Mobile Number" required>
-                </div>
+.sweet-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0e0d0;
+    position: relative;
+    overflow: hidden;
+}
 
-                <div class="form-group">
-                    <label for="customerAddress">Poora Pata (Full Delivery Address):</label>
-                    <input type="text" id="customerAddress" placeholder="Ghar ka pata, Landmark, City aur Pincode" required>
-                </div>
+.sweet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(128,0,32,0.14);
+}
 
-                <div class="total-price-box">
-                    Total Estimated Price: <span id="totalPriceDisplay">₹0</span>
-                </div>
+/* Badges */
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    z-index: 10;
+}
+.best-seller { background-color: #ff4757; }
+.premium { background-color: #ffa502; }
+.ghee { background-color: #2ed573; }
+.trending { background-color: #1e90ff; }
+.fresh { background-color: #9b59b6; }
+.low-fat { background-color: #2ecc71; }
 
-                <button type="submit" class="submit-btn"><i class="fa-solid fa-check-double"></i> Confirm Order</button>
-            </form>
-        </div>
-    </div>
+.sweet-image-container {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #f5f5f5;
+}
 
-    <!-- Smart Success Modal Card -->
-    <div id="successModal" class="modal">
-        <div class="modal-content success-card-content">
-            <div class="success-icon">🎉</div>
-            <h2>Order Details Saved!</h2>
-            <p class="redirect-notice">WhatsApp par chat open karne ke liye neeche diye gaye button par click karein.</p>
-            
-            <a href="#" id="whatsappLinkBtn" class="whatsapp-go-btn" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp
-            </a>
-        </div>
-    </div>
+.sweet-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
 
-    <footer class="footer">
-        <p>© 2026 Shahi Pakwan - All Rights Reserved</p>
-    </footer>
+.sweet-card:hover .sweet-img {
+    transform: scale(1.05);
+}
 
-    <!-- JS File Link -->
-    <script src="script.js"></script>
-</body>
-</html>
+.sweet-card h3 {
+    font-size: 1.3rem;
+    color: #444;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.price-tag {
+    font-size: 1.05rem;
+    color: #666;
+    margin-bottom: 20px;
+    background: #fff8f0;
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px dashed #ffdf00;
+}
+
+.price-tag .rate {
+    font-weight: 700;
+    color: #b32424;
+    font-size: 1.25rem;
+}
+
+.order-btn {
+    background-color: #800020;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.order-btn:hover {
+    background-color: #b32424;
+}
+
+/* Advertisement & Review Video Styling */
+.ad-video-section {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    text-align: center;
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(128, 0, 32, 0.05);
+    border: 1px solid #f0e0d0;
+}
+
+.review-stars {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.ad-video-section h2 {
+    color: #800020;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.ad-subtext {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+/* FIXED RECTANGLE WRAPPER FOR VIDEO */
+.ad-video-wrapper {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 3px solid #ffdf00;
+    background-color: #000;
+    /* This forces the container to always maintain a perfect 16:9 rectangle */
+    aspect-ratio: 16 / 9; 
+}
+
+.ad-video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video stays full and properly cropped as rectangle */
+    display: block;
+}
+
+.video-footer-text {
+    font-size: 1.05rem;
+    color: #800020;
+    font-weight: 600;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Modals Pop-up Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    position: relative;
+    animation: slideDown 0.3s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.modal h2 {
+    color: #800020;
+    margin-bottom: 15px;
+}
+
+#selectedSweetText {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    background: #fdf2f2;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 4px solid #b32424;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    border-color: #800020;
+    outline: none;
+}
+
+.total-price-box {
+    background: #e6f4ea;
+    color: #137333;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    border: 1px solid #c2e7cd;
+}
+
+.submit-btn {
+    background-color: #800020;
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.submit-btn:hover {
+    background-color: #b32424;
+}
+
+/* Success Card Styling */
+.success-card-content {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 8px solid #28a745;
+}
+
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    animation: pop 0.4s ease-in-out;
+}
+
+@keyframes pop {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.redirect-notice {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.whatsapp-go-btn {
+    text-decoration: none;
+    background-color: #25D366;
+    color: white;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.whatsapp-go-btn:hover {
+    background-color: #128C7E;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: #aaa;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   🚨 FULL MOBILE RESPONSIVE MEDIA BREAKPOINTS
+   ========================================== */
+@media (max-width: 768px) {
+    .header {
+        padding: 30px 15px;
+    }
+    .header h1 {
+        font-size: 1.9rem;
+    }
+    .logo-circle {
+        font-size: 1.8rem;
+        width: 50px;
+        height: 50px;
+    }
+    .tagline {
+        font-size: 0.95rem;
+    }
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    .shop-details-card {
+        padding: 20px 15px;
+        margin-bottom: 35px;
+    }
+    .shop-details-card h2 {
+        font-size: 1.25rem;
+    }
+    .details-grid {
+        grid-template-columns: 1fr; /* Flex stacking flow layout */
+        gap: 12px;
+    }
+    .detail-item {
+        font-size: 0.95rem;
+    }
+    .sweets-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    .sweets-grid {
+        grid-template-columns: 1fr; /* Cards single stack view on phone viewports */
+        gap: 20px;
+    }
+    .sweet-image-container {
+        height: 200px;
+    }
+    .ad-video-section {
+        margin-top: 40px;
+        padding: 25px 15px;
+    }
+    .ad-video-section h2 {
+        font-size: 1.35rem;
+    }
+    .ad-subtext {
+        font-size: 0.9srem;
+        margin-bottom: 15px;
+    }
+    /* Explicit video responsive rectangle adjustments */
+    .ad-video-wrapper {
+        border-width: 2px;
+        aspect-ratio: 16 / 9; /* Strict widescreen landscape rectangle lock on mobile */
+    }
+    .modal-content {
+        padding: 20px 15px;
+        width: 95%;
+    }
+}
