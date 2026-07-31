@@ -1,4 +1,4 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -227,20 +227,25 @@ body {
     margin-bottom: 25px;
 }
 
+/* FIXED RECTANGLE WRAPPER FOR VIDEO */
 .ad-video-wrapper {
-    max-width: 800px;
+    max-width: 700px;
+    width: 100%;
     margin: 0 auto;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     border: 3px solid #ffdf00;
     background-color: #000;
+    /* This forces the container to always maintain a perfect 16:9 rectangle */
+    aspect-ratio: 16 / 9; 
 }
 
 .ad-video-player {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video stays full and properly cropped as rectangle */
     display: block;
-    height: auto;
 }
 
 .video-footer-text {
@@ -423,3 +428,77 @@ body {
     margin-top: 60px;
     font-size: 0.9rem;
 }
+
+/* ==========================================
+   🚨 FULL MOBILE RESPONSIVE MEDIA BREAKPOINTS
+   ========================================== */
+@media (max-width: 768px) {
+    .header {
+        padding: 30px 15px;
+    }
+    .header h1 {
+        font-size: 1.9rem;
+    }
+    .logo-circle {
+        font-size: 1.8rem;
+        width: 50px;
+        height: 50px;
+    }
+    .tagline {
+        font-size: 0.95rem;
+    }
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    .shop-details-card {
+        padding: 20px 15px;
+        margin-bottom: 35px;
+    }
+    .shop-details-card h2 {
+        font-size: 1.25rem;
+    }
+    .details-grid {
+        grid-template-columns: 1fr; /* Flex stacking flow layout */
+        gap: 12px;
+    }
+    .detail-item {
+        font-size: 0.95rem;
+    }
+    .sweets-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    .sweets-grid {
+        grid-template-columns: 1fr; /* Cards single stack view on phone viewports */
+        gap: 20px;
+    }
+    .sweet-image-container {
+        height: 200px;
+    }
+    .ad-video-section {
+        margin-top: 40px;
+        padding: 25px 15px;
+    }
+    .ad-video-section h2 {
+        font-size: 1.35rem;
+    }
+    .ad-subtext {
+        font-size: 0.9srem;
+        margin-bottom: 15px;
+    }
+    /* Explicit video responsive rectangle adjustments */
+    .ad-video-wrapper {
+        border-width: 2px;
+        aspect-ratio: 16 / 9; /* Strict widescreen landscape rectangle lock on mobile */
+    }
+    .modal-content {
+        padding: 20px 15px;
+        width: 95%;
+    }
+}
+
+
+
+
+
